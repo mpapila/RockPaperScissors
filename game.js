@@ -10,6 +10,8 @@ let playerScore = 0;
 let computerScore = 0;
 const div = document.createElement('div');
 document.body.appendChild(div);
+const div2 = document.createElement('div');
+document.body.appendChild(div2);
 playRound = (playerSelection, computerSelection) => {
   if (playerSelection === "rock" && computerSelection === "scissors"
     || playerSelection === "paper" && computerSelection === "rock"
@@ -17,18 +19,21 @@ playRound = (playerSelection, computerSelection) => {
     console.log('You Win!');
     playerScore++;
     div.textContent = (`Your Score: ${playerScore} Computer Score: ${computerScore}`);
+    div2.textContent = (`This turn You won!`)
     console.log(playerScore);
 
   } else if (playerSelection === "rock" && computerSelection === "paper"
     || playerSelection === "paper" && computerSelection === "scissors"
     || playerSelection === "scissors" && computerSelection === "rock") {
     console.log('You lose!');
+    div2.textContent = (`This turn You lost!`)
     computerScore++;
     div.textContent = (`Your Score: ${playerScore} Computer Score: ${computerScore}`);
     console.log(computerScore);
 
   } else {
     console.log('tie');
+    div2.textContent = (`This turn It was a tie`)
     div.textContent = (`Your Score: ${playerScore} Computer Score: ${computerScore}`);
   };
 
